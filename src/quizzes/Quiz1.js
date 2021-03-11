@@ -1,6 +1,8 @@
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import QuizEnd from './QuizEnd'
+
 
 
 const Quiz1 = () => {
@@ -13,7 +15,7 @@ const Quiz1 = () => {
   const token = '9cbWfQjSMiEwOyMVpK9c'
   
 
-  const history = useHistory()
+  // const history = useHistory()
  
 
   useEffect(()=>{
@@ -183,24 +185,33 @@ const Quiz1 = () => {
  
   if (counterRight + counterWrong === 20){
     console.log('end of the quiz')
-    history.push('/quiz-end')
+    // history.push('/quiz-end')
   }
   
   return (
     <>
-      <div>
-        <h1>Who said this quote?</h1>
-      </div>
-      <div>
-        <p>Right: {counterRight}</p>
-        <p>Wrong: {counterWrong}</p>
+      { counterRight + counterWrong === 20 ?
+        <QuizEnd 
+          counterWrong={counterWrong}
+          counterRight={counterRight}
+        />
+        :
+        <>
+          <div>
+            <h1>Who said this quote?</h1>
+          </div>
+          <div>
+            <p>Right: {counterRight}</p>
+            <p>Wrong: {counterWrong}</p>
 
-        <hr />
-      </div>
-      <div>
-        <p> {quotes[randomQuote].dialog}</p>
-      </div>
-      {randomButtonsOrder()}
+            <hr />
+          </div>
+          <div>
+            <p> {quotes[randomQuote].dialog}</p>
+          </div>
+          {randomButtonsOrder()}
+        </>
+      }
     </>
   )
 }
