@@ -104,10 +104,8 @@
 ​
             //*which movie did they say this in quiz
         //choice buttosns of the three movies, and the player will have to choose the correct answer 
-​
-        //
-​
-​
+
+
     //*main character quiz
         //choose the characters you want to compare quotes for 
            //  /character/{id}/quote - endpoint to get all the quotes from a certain character

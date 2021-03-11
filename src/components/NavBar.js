@@ -9,9 +9,6 @@ const NavBar = () => {
         <div className="navbar-brand">
           <Link to="/"> Home</Link>
         </div>
-
-
-
         <div className="navbar-end">
           <div className="navbar-item has-dropdown is-hoverable">
             <a className="navbar-link">

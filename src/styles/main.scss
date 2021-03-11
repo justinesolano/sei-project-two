@@ -1,7 +1,99 @@
+// @import url('../game-assets/ringbearer/ring.ttf');
+
 $yellow: #fbcb46;
 $footer-background-color: #363636;
 $footer-padding: 2rem 1.5rem;
 $card-header-background-color: $yellow;
 $box-padding: 1rem;
-@import '~bulma/bulma.sass';
+$navbar-height: 4rem;
 
+
+@import '~bulma/bulma.sass';
+// .home-header{
+//   display: flex;
+//   justify-content: center;
+.home-body{
+    height: 100vh;
+    background-color: black;
+  .home-title{
+    margin-top: 80px;
+    margin-left: 60px;
+  }
+  .pick-a-quiz{
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman, sans serif';
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    font-weight: bold;
+  }
+}
+.quiz-list{
+  display: flex;
+  justify-content: center;
+}
+.navbar{
+  height: 40px;
+  background-image: '../game-assets/map.jpg';
+}
+.navbar-brand{
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 30px;
+
+  .right, .wrong{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-right: -450px;
+    font-size: 20px;
+  
+}
+}
+.main{
+  margin-top: 100px;
+  background-image: '../game-assets/map.jpg';
+  // font-family: 'Ringbearer Medium';
+  .guess-who{
+    font-size: 50px;
+  }
+.question{
+  display:flex;
+  justify-content: center;
+  font-size: 30px;
+//   .question{
+//     display:flex;
+//     justify-content: center;
+// }
+}
+.quotes{
+  display: flex;
+  justify-content: center;
+  border: 10px;
+  border-radius: 20px;
+  // width: 500px;
+  margin-left: 300px;
+  margin-right: 300px;
+  height: 145px;
+  margin-bottom: 20px;
+  p{
+    margin-bottom: 20px;
+    justify-content: center;
+    padding: 10px;
+    padding-left: 30px;
+  }
+}
+.choices{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+}
