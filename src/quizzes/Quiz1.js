@@ -1,5 +1,7 @@
+import { useHistory } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+
 
 const Quiz1 = () => {
 
@@ -8,8 +10,10 @@ const Quiz1 = () => {
 
   const [counterWrong, setCounterWrong] = useState(0)
   const [counterRight, setCounterRight] = useState(0)
-  const token = '6MlYn5XJh5l2icjeXahh'
+  const token = '9cbWfQjSMiEwOyMVpK9c'
   
+
+  const history = useHistory()
  
 
   useEffect(()=>{
@@ -52,12 +56,12 @@ const Quiz1 = () => {
 
 
   const rightAnswerRandom = quotes[randomQuote].character
-  console.log('right answer random', rightAnswerRandom)
+  // console.log('right answer random', rightAnswerRandom)
 
   const filteredCharacters = characters.filter(character => {
     return character._id === rightAnswerRandom
   })
-  console.log(filteredCharacters[0].name) 
+  // console.log(filteredCharacters[0].name) 
 
   function buttonNumberGenerator() {
     return Math.floor(Math.random() * 4)
@@ -171,20 +175,17 @@ const Quiz1 = () => {
   
 
   const handleChoice = (event)=>{
-   
     event.target.id === 'choice1' ? setCounterRight(counterRight + 1) : setCounterWrong(counterWrong + 1)
     randomButtonsOrder()
-   
   }
-  console.log('counter right', counterRight)
-  console.log('counter wrong', counterWrong)
+  // console.log('counter right', counterRight)
+  // console.log('counter wrong', counterWrong)
  
-
+  if (counterRight + counterWrong === 20){
+    console.log('end of the quiz')
+    history.push('/quiz-end')
+  }
   
- 
-
-  // console.log('characters>>>>>',characters[9].name)
-
   return (
     <>
       <div>
@@ -192,8 +193,8 @@ const Quiz1 = () => {
       </div>
       <div>
         <p>Right: {counterRight}</p>
-        
         <p>Wrong: {counterWrong}</p>
+
         <hr />
       </div>
       <div>
