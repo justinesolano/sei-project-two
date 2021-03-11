@@ -8,8 +8,8 @@ const Quiz1 = () => {
 
   const [counterWrong, setCounterWrong] = useState(0)
   const [counterRight, setCounterRight] = useState(0)
-  const token = '9cbWfQjSMiEwOyMVpK9c'
-  console.log(characters, setCharacters)
+  const token = '6MlYn5XJh5l2icjeXahh'
+  
  
 
   useEffect(()=>{
@@ -41,20 +41,147 @@ const Quiz1 = () => {
     }
     getData()
   }, [])
+  
+
+  if (!quotes || !characters) return ''
+
+  const randomQuote = Math.floor(Math.random() * quotes.length)
+  const randomCharacter1 = Math.floor(Math.random() * characters.length)
+  const randomCharacter2 = Math.floor(Math.random() * characters.length)
+  const randomCharacter3 = Math.floor(Math.random() * characters.length)
+
+
+  const rightAnswerRandom = quotes[randomQuote].character
+  console.log('right answer random', rightAnswerRandom)
+
+  const filteredCharacters = characters.filter(character => {
+    return character._id === rightAnswerRandom
+  })
+  console.log(filteredCharacters[0].name) 
+
+  function buttonNumberGenerator() {
+    return Math.floor(Math.random() * 4)
+  }
+  
+  const buttonsOrder = buttonNumberGenerator()
+
+  const randomButtonsOrder = () => {
+    if (buttonsOrder === 0){
+      return (
+        <div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice1">
+              {filteredCharacters[0].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice2">
+              {characters[randomCharacter1].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice3">
+              {characters[randomCharacter2].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice}  className={characters._id} id="choice4">
+              {characters[randomCharacter3].name}
+            </button>
+          </div>
+        </div>
+      )
+    } else if (buttonsOrder === 1){
+      return (
+        <div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice2">
+              {characters[randomCharacter1].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice3">
+              {characters[randomCharacter2].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice}  className={characters._id} id="choice4">
+              {characters[randomCharacter3].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice1">
+              {filteredCharacters[0].name}
+            </button>
+          </div>
+        </div>
+      )
+    } else if (buttonsOrder === 2){
+      return (
+        <div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice3">
+              {characters[randomCharacter2].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice}  className={characters._id} id="choice4">
+              {characters[randomCharacter3].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice1">
+              {filteredCharacters[0].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice2">
+              {characters[randomCharacter1].name}
+            </button>
+          </div>
+        </div>
+      )
+    } else if (buttonsOrder === 3){
+      return (
+        <div> 
+          <div>
+            <button onClick={handleChoice}  className={characters._id} id="choice4">
+              {characters[randomCharacter3].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice1">
+              {filteredCharacters[0].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice2">
+              {characters[randomCharacter1].name}
+            </button>
+          </div>
+          <div>
+            <button onClick={handleChoice} className={characters._id} id="choice3">
+              {characters[randomCharacter2].name}
+            </button>
+          </div>
+        </div>
+      )
+    }
+  }
+  
 
   const handleChoice = (event)=>{
-    console.log(event.target.className)
-    event.target.className === 'right' ? setCounterRight(counterRight + 1) : setCounterWrong(counterWrong + 1)
+   
+    event.target.id === 'choice1' ? setCounterRight(counterRight + 1) : setCounterWrong(counterWrong + 1)
+    randomButtonsOrder()
+   
   }
   console.log('counter right', counterRight)
   console.log('counter wrong', counterWrong)
  
 
-  if (!quotes || !characters) return ''
-  const randomQuote = Math.floor(Math.random() * quotes.length)
-  const randomCharacter1 = Math.floor(Math.random() * characters.length)
-  const randomCharacter2 = Math.floor(Math.random() * characters.length)
-  const randomCharacter3 = Math.floor(Math.random() * characters.length)
+  
+ 
 
   // console.log('characters>>>>>',characters[9].name)
 
@@ -64,26 +191,15 @@ const Quiz1 = () => {
         <h1>Who said this quote?</h1>
       </div>
       <div>
+        <p>Right: {counterRight}</p>
+        
+        <p>Wrong: {counterWrong}</p>
+        <hr />
+      </div>
+      <div>
         <p> {quotes[randomQuote].dialog}</p>
       </div>
-      <div>
-        <button onClick={handleChoice} className="right">
-          {quotes[randomQuote].character}
-        </button>
-        <button onClick={handleChoice} className="wrong">
-          {characters[randomCharacter1].name}
-        </button>
-      </div>
-      <div>
-        <button onClick={handleChoice} className="wrong">
-          {characters[randomCharacter2].name}
-        </button>
-      </div>
-      <div>
-        <button onClick={handleChoice}  className="wrong">
-          {characters[randomCharacter3].name}
-        </button>
-      </div>
+      {randomButtonsOrder()}
     </>
   )
 }
