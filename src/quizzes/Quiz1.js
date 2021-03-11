@@ -5,6 +5,9 @@ const Quiz1 = () => {
 
   const [quotes, setQuotes] = useState(null)
   const [characters, setCharacters] = useState(null)
+
+  const [counterWrong, setCounterWrong] = useState(0)
+  const [counterRight, setCounterRight] = useState(0)
   const token = '9cbWfQjSMiEwOyMVpK9c'
   console.log(characters, setCharacters)
  
@@ -38,6 +41,13 @@ const Quiz1 = () => {
     }
     getData()
   }, [])
+
+  const handleChoice = (event)=>{
+    console.log(event.target.className)
+    event.target.className === 'right' ? setCounterRight(counterRight + 1) : setCounterWrong(counterWrong + 1)
+  }
+  console.log('counter right', counterRight)
+  console.log('counter wrong', counterWrong)
  
 
   if (!quotes || !characters) return ''
@@ -46,7 +56,7 @@ const Quiz1 = () => {
   const randomCharacter2 = Math.floor(Math.random() * characters.length)
   const randomCharacter3 = Math.floor(Math.random() * characters.length)
 
-  console.log('characters>>>>>',characters[9].name)
+  // console.log('characters>>>>>',characters[9].name)
 
   return (
     <>
@@ -57,22 +67,20 @@ const Quiz1 = () => {
         <p> {quotes[randomQuote].dialog}</p>
       </div>
       <div>
-        
-        <button>
+        <button onClick={handleChoice} className="right">
           {quotes[randomQuote].character}
         </button>
-
-        <button>
+        <button onClick={handleChoice} className="wrong">
           {characters[randomCharacter1].name}
         </button>
       </div>
       <div>
-        <button>
+        <button onClick={handleChoice} className="wrong">
           {characters[randomCharacter2].name}
         </button>
       </div>
       <div>
-        <button>
+        <button onClick={handleChoice}  className="wrong">
           {characters[randomCharacter3].name}
         </button>
       </div>
