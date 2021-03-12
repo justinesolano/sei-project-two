@@ -12,7 +12,7 @@ const NavBar = () => {
         <div className="navbar-end">
           <div className="navbar-item has-dropdown is-hoverable">
             <a className="navbar-link">
-          Quizzes
+          Menu
             </a>
             <div className="navbar-dropdown">
               <Link to="/quiz-1" className="navbar-item">

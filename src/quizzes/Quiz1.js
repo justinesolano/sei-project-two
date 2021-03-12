@@ -75,100 +75,116 @@ const Quiz1 = () => {
     if (buttonsOrder === 0){
       return (
         <div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
-              {filteredCharacters[0].name}
-            </button>
-          </div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
-              {characters[randomCharacter1].name}
-            </button>
-          </div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
-              {characters[randomCharacter2].name}
-            </button>
-          </div>
-          <div>
-            <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
-              {characters[randomCharacter3].name}
-            </button>
+          <div className="top-two">
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
+                {filteredCharacters[0].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
+                {characters[randomCharacter1].name}
+              </button>
+            </div>
+            <div className="bottom-two">
+              <div>
+                <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
+                  {characters[randomCharacter2].name}
+                </button>
+              </div>
+              <div>
+                <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
+                  {characters[randomCharacter3].name}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )
     } else if (buttonsOrder === 1){
       return (
         <div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
-              {characters[randomCharacter1].name}
-            </button>
+          <div className="top-two">
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
+                {characters[randomCharacter1].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
+                {characters[randomCharacter2].name}
+              </button>
+            </div>
           </div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
-              {characters[randomCharacter2].name}
-            </button>
-          </div>
-          <div>
-            <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
-              {characters[randomCharacter3].name}
-            </button>
-          </div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
-              {filteredCharacters[0].name}
-            </button>
+          <div className="bottom-two">
+            <div>
+              <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
+                {characters[randomCharacter3].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
+                {filteredCharacters[0].name}
+              </button>
+            </div>
           </div>
         </div>
       )
     } else if (buttonsOrder === 2){
       return (
         <div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
-              {characters[randomCharacter2].name}
-            </button>
+          <div className="top-two">
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
+                {characters[randomCharacter2].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
+                {characters[randomCharacter3].name}
+              </button>
+            </div>
           </div>
-          <div>
-            <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
-              {characters[randomCharacter3].name}
-            </button>
-          </div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
-              {filteredCharacters[0].name}
-            </button>
-          </div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
-              {characters[randomCharacter1].name}
-            </button>
+          <div className="bottom-two">
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
+                {filteredCharacters[0].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
+                {characters[randomCharacter1].name}
+              </button>
+            </div>
           </div>
         </div>
       )
     } else if (buttonsOrder === 3){
       return (
         <div> 
-          <div>
-            <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
-              {characters[randomCharacter3].name}
-            </button>
+          <div className="top-two">
+            <div>
+              <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
+                {characters[randomCharacter3].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
+                {filteredCharacters[0].name}
+              </button>
+            </div>
           </div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
-              {filteredCharacters[0].name}
-            </button>
-          </div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
-              {characters[randomCharacter1].name}
-            </button>
-          </div>
-          <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
-              {characters[randomCharacter2].name}
-            </button>
+          <div className="bottom-two">
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
+                {characters[randomCharacter1].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
+                {characters[randomCharacter2].name}
+              </button>
+            </div>
           </div>
         </div>
       )
@@ -228,6 +244,7 @@ const Quiz1 = () => {
                   {randomButtonsOrder()}
                 </div>
               </div>
+              <progress className="progress" value="" max="100"></progress>
             </main>
           </body>
         </>
