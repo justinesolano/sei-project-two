@@ -9,10 +9,19 @@ const Quiz1 = () => {
 
   const [quotes, setQuotes] = useState(null)
   const [characters, setCharacters] = useState(null)
+  const [movie, setMovie] = useState(null)
+  // console.log(movie)
 
+  let spreadData = []
   const [counterWrong, setCounterWrong] = useState(0)
   const [counterRight, setCounterRight] = useState(0)
-  const token = '9cbWfQjSMiEwOyMVpK9c' //'UiMcVRqTZfm9cd5rumQy'
+  const tokenArray = ['9cbWfQjSMiEwOyMVpK9c', 'F-xdpariq8FTrnifdJOA', '6MlYn5XJh5l2icjeXahh', 'UiMcVRqTZfm9cd5rumQy'] 
+  const token = [tokenArray[Math.floor(Math.random() * tokenArray.length)]]
+  const [errors, setErrors] = useState(null)
+  // console.log(errors, setErrors)
+
+  
+ 
   
 
   // const history = useHistory()
@@ -20,14 +29,23 @@ const Quiz1 = () => {
 
   useEffect(()=>{
     const getData = async () =>{
-      const response = await axios.get('https://the-one-api.dev/v2/character', 
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
+      try {
+        const response = await axios.get('https://the-one-api.dev/v2/character', 
+          {
+            headers: {
+              Authorization: `Bearer ${token[0]}`,
+            },
+          })
+        setCharacters(response.data.docs)
+
+      } catch (err) {
+        // return <h1>This link is broken</h1>
+        setErrors('This page is broken, try again later!')
+        // console.log(errors)
+      }
+      
       // console.log(response)
-      setCharacters(response.data.docs)
+      
       
     }
     getData()
@@ -35,29 +53,56 @@ const Quiz1 = () => {
   
   useEffect(()=>{
     const getData = async () =>{
-      const response = await axios.get('https://the-one-api.dev/v2/quote', 
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-      // console.log(response)
-      setQuotes(response.data.docs)
+
+      try {
+        const response = await axios.get('https://the-one-api.dev/v2/quote', 
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+        // console.log(response)
+        setQuotes(response.data.docs)
+      } catch (err){
+        setErrors('This page is broken, try again later!')
+      }
       
     }
     getData()
   }, [])
+
+  useEffect(()=>{
+    const getData = async () =>{
+      try {
+        const response = await axios.get('https://the-one-api.dev/v2/movie/5cd95395de30eff6ebccde5c/quote', 
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+        setMovie(response.data.docs) 
+      } catch (err){
+        setErrors('This page is broken, try again later!')
+      }    
+    }
+
+
+    getData()
+  }, [])
   
 
-  if (!quotes || !characters) return ''
+  if (!quotes || !characters || !movie) return <p>{errors}</p> 
 
-  const randomQuote = Math.floor(Math.random() * quotes.length)
+  spreadData = [...quotes, ...movie]
+  // console.log('spread data',spreadData)
+
+  const randomQuote = Math.floor(Math.random() * spreadData.length)
   const randomCharacter1 = Math.floor(Math.random() * characters.length)
   const randomCharacter2 = Math.floor(Math.random() * characters.length)
   const randomCharacter3 = Math.floor(Math.random() * characters.length)
 
 
-  const rightAnswerRandom = quotes[randomQuote].character
+  const rightAnswerRandom = spreadData[randomQuote].character
   // console.log('right answer random', rightAnswerRandom)
 
   const filteredCharacters = characters.filter(character => {
@@ -206,6 +251,9 @@ const Quiz1 = () => {
   
   return (
     <>
+    
+
+    
       { counterRight + counterWrong === 20 ?
         <Quiz1End 
           counterWrong={counterWrong}
@@ -213,6 +261,7 @@ const Quiz1 = () => {
         />
         :
         <>
+         
           <body className="body-quiz">
             <main className="main">
               <div className="header">
@@ -236,15 +285,17 @@ const Quiz1 = () => {
                   <h1>
                     <img className="who-said" src='https://fontmeme.com/permalink/210311/ae4ad838ccbe7f5dce73627f00651c36.png' />
                   </h1>
+                  <hr />
                 </div>
                 <div className="quotes box">
-                  <p> {quotes[randomQuote].dialog}</p>
+                  <p> {spreadData[randomQuote].dialog}</p>
                 </div>
                 <div className="choices">
+                  
                   {randomButtonsOrder()}
                 </div>
               </div>
-              <progress className="progress" value="" max="100"></progress>
+              {/* <progress className="progress" value="" max="100"></progress> */}
             </main>
           </body>
         </>
