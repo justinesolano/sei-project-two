@@ -10,9 +10,7 @@ $navbar-height: 4rem;
 
 
 @import '~bulma/bulma.sass';
-// .home-header{
-//   display: flex;
-//   justify-content: center;
+
 // HOME
 .home-body{
     height: 100vh;
@@ -110,11 +108,15 @@ $navbar-height: 4rem;
     font-family: 'Times New Roman', cursive;
   }
 }
-.choices{
+.choices .top-two, .choices .bottom-two{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  .button{
+    margin: 10px;
+  }
 }
+
 
   .progress{
     // display: flex;

@@ -74,7 +74,7 @@ const Quiz1 = () => {
   const randomButtonsOrder = () => {
     if (buttonsOrder === 0){
       return (
-        <div>
+        <div className="answers">
           <div className="top-two">
             <div>
               <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
@@ -86,17 +86,17 @@ const Quiz1 = () => {
                 {characters[randomCharacter1].name}
               </button>
             </div>
-            <div className="bottom-two">
-              <div>
-                <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
-                  {characters[randomCharacter2].name}
-                </button>
-              </div>
-              <div>
-                <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
-                  {characters[randomCharacter3].name}
-                </button>
-              </div>
+          </div>
+          <div className="bottom-two">
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
+                {characters[randomCharacter2].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
+                {characters[randomCharacter3].name}
+              </button>
             </div>
           </div>
         </div>
