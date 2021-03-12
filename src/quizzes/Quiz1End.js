@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const QuizEnd = (counterWrong, counterRight) => {
+const QuizEnd = (counterWrong) => {
 
-  console.log('counter right', counterRight)
-  console.log('counter wrong', counterWrong)
+ 
 
   const resetGame = ()=>{
     window.location.reload()
+
+    
   }
 
   return (

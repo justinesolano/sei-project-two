@@ -1,7 +1,7 @@
 // import { useHistory } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import QuizEnd from './QuizEnd'
+import Quiz1End from './Quiz1End'
 
 
 
@@ -191,7 +191,7 @@ const Quiz1 = () => {
   return (
     <>
       { counterRight + counterWrong === 20 ?
-        <QuizEnd 
+        <Quiz1End 
           counterWrong={counterWrong}
           counterRight={counterRight}
         />

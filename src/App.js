@@ -2,8 +2,11 @@ import React from 'react'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Quiz1 from './quizzes/Quiz1'
-import QuizEnd from './quizzes/QuizEnd'
+import Quiz1End from './quizzes/Quiz1End'
+import Quiz2 from './quizzes/Quiz2'
+import Quiz2End from './quizzes/Quiz2End'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
 
 function App() {
   return (
@@ -17,7 +20,13 @@ function App() {
           <Quiz1 />
         </Route>
         <Route path="/quiz-end">
-          <QuizEnd />
+          <Quiz1End />
+        </Route>
+        <Route path="/quiz-2">
+          <Quiz2 />
+        </Route>
+        <Route path="/quiz-2-end">
+          <Quiz2End />
         </Route>
       </Switch>
     </BrowserRouter>
