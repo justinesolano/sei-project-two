@@ -168,7 +168,7 @@ $navbar-height: 4rem;
   .guess-who-two{
     font-size: 50px;
     margin-top: 50px;
-    .map-bg-two .has-shadow{
+    .map-bg-two{
       display: flex;
       justify-content: center;
       filter: drop-shadow(5px 5px 5px #222222);
@@ -179,6 +179,7 @@ $navbar-height: 4rem;
       height: 30px;
       width: 300px;
       margin-left: 260px;
+      margin-top: -50px;
       filter: drop-shadow(5px 5px 5px #222222);
     }
   }
