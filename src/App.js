@@ -3,6 +3,8 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Quiz1 from './quizzes/Quiz1'
 import QuizEnd from './quizzes/QuizEnd'
+import Resources from './components/Resources'
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -18,6 +20,9 @@ function App() {
         </Route>
         <Route path="/quiz-end">
           <QuizEnd />
+        </Route>
+        <Route path="/resources">
+          <Resources />
         </Route>
       </Switch>
     </BrowserRouter>

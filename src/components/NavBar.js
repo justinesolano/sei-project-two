@@ -28,6 +28,11 @@ const NavBar = () => {
               <a className="navbar-item">
             Report an issue
               </a>
+              <a className="navbar-item">
+                <Link to="/resources" className="navbar-item">
+            Resources
+                </Link>
+              </a>
             </div>
           </div>
         </div>

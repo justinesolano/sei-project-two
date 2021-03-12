@@ -76,22 +76,22 @@ const Quiz1 = () => {
       return (
         <div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice1">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
               {filteredCharacters[0].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice2">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
               {characters[randomCharacter1].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice3">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
               {characters[randomCharacter2].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice}  className={`${characters._id} button is-dark`} id="choice4">
+            <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
               {characters[randomCharacter3].name}
             </button>
           </div>
@@ -101,22 +101,22 @@ const Quiz1 = () => {
       return (
         <div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice2">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
               {characters[randomCharacter1].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice3">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
               {characters[randomCharacter2].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice}  className={`${characters._id} button is-dark`} id="choice4">
+            <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
               {characters[randomCharacter3].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice1">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
               {filteredCharacters[0].name}
             </button>
           </div>
@@ -126,22 +126,22 @@ const Quiz1 = () => {
       return (
         <div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice3">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
               {characters[randomCharacter2].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice}  className={`${characters._id} button is-dark`} id="choice4">
+            <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
               {characters[randomCharacter3].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice1">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
               {filteredCharacters[0].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice2">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
               {characters[randomCharacter1].name}
             </button>
           </div>
@@ -151,22 +151,22 @@ const Quiz1 = () => {
       return (
         <div> 
           <div>
-            <button onClick={handleChoice}  className={`${characters._id} button is-dark`} id="choice4">
+            <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
               {characters[randomCharacter3].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice1">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
               {filteredCharacters[0].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice2">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
               {characters[randomCharacter1].name}
             </button>
           </div>
           <div>
-            <button onClick={handleChoice} className={`${characters._id} button is-dark`} id="choice3">
+            <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
               {characters[randomCharacter2].name}
             </button>
           </div>
@@ -197,11 +197,13 @@ const Quiz1 = () => {
         />
         :
         <>
-          <body className="body">
+          <body className="body-quiz">
             <main className="main">
               <div className="header">
                 <div className="quiz-title">
-                  <h1 className="guess-who">Guess who!</h1>
+                  <h1 className="guess-who">
+                    <img className="map-bg has-shadow" src='https://fontmeme.com/permalink/210311/99bfe0553a465f1d960eb1896f2abec6.png' />
+                  </h1>
                 </div>
                 <div className="counter">
                   <div className="right">
@@ -215,7 +217,9 @@ const Quiz1 = () => {
               <div className="question-quiz">
                 <div className="question">
                   <hr />
-                  <h1>Who said...</h1>
+                  <h1>
+                    <img className="who-said" src='https://fontmeme.com/permalink/210311/ae4ad838ccbe7f5dce73627f00651c36.png' />
+                  </h1>
                 </div>
                 <div className="quotes box">
                   <p> {quotes[randomQuote].dialog}</p>
