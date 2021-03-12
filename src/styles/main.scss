@@ -79,6 +79,7 @@ $navbar-height: 4rem;
   .guess-who{
     margin-top: 50px;
     font-size: 50px;
+    filter: drop-shadow(5px 5px 5px #222222);
   }
 
   .right, .wrong{
@@ -104,7 +105,8 @@ $navbar-height: 4rem;
 }
 .who-said{
   height: 30px;
-  width: 250px;
+  width: 240px;
+  filter: drop-shadow(5px 5px 5px #222222);
 }
 .quotes{
   display: flex;
@@ -155,6 +157,7 @@ $navbar-height: 4rem;
   background-image: url('../game-assets/mapdark.jpg');
   background-size: fill;
 
+
 .header-two{
   display: flex;
   justify-content: center;
@@ -168,6 +171,7 @@ $navbar-height: 4rem;
     .map-bg-two .has-shadow{
       display: flex;
       justify-content: center;
+      filter: drop-shadow(5px 5px 5px #222222);
     }
     .map-bg-three{
       display: flex;
@@ -175,7 +179,7 @@ $navbar-height: 4rem;
       height: 30px;
       width: 300px;
       margin-left: 260px;
-    
+      filter: drop-shadow(5px 5px 5px #222222);
     }
   }
   }
@@ -201,6 +205,7 @@ $navbar-height: 4rem;
     font-size: 40px;
     margin-top: 90px;
     font-weight: bold;
+    filter: drop-shadow(5px 5px 5px #222222);
   }
   .quotes-two {
     display: flex;
@@ -230,9 +235,7 @@ $navbar-height: 4rem;
   .button{
     margin: 10px;
   }
-  .button .is-hovered{
-    color: white;
-  }
+
 
 
   // .progress{
@@ -354,7 +357,7 @@ $navbar-height: 4rem;
       align-content: flex-start;
       
     }
-    .header-two{
+    .header-two, .header{
       display: flex;
     }
     // .quote-two {

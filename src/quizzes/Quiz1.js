@@ -263,6 +263,7 @@ const Quiz1 = () => {
             <main className="main">
               <div className="header">
                 <div className="quiz-title">
+                  
                   <h1 className="guess-who">
                     <img className="map-bg has-shadow" src='https://fontmeme.com/permalink/210311/99bfe0553a465f1d960eb1896f2abec6.png' />
                   </h1>
@@ -275,6 +276,7 @@ const Quiz1 = () => {
                     <p>Wrong: {counterWrong}</p>
                   </div>
                 </div>
+                
               </div>
               <div className="question-quiz">
                 <div className="question">
@@ -292,7 +294,6 @@ const Quiz1 = () => {
                   {randomButtonsOrder()}
                 </div>
               </div>
-              {/* <progress className="progress" value="" max="100"></progress> */}
             </main>
           </body>
         </>
