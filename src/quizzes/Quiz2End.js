@@ -62,7 +62,7 @@ const Quiz2End = (props) => {
         </h1> 
         <div className="counter-results">
           <p> {`You got ${props.counterRight} question(s) right`}
-            <br /> {`You got ${props.props} question(s) wrong`}</p>
+            <br /> {`You got ${props.counterWrong} question(s) wrong`}</p>
         </div>
         <div className="score-progress">
           { scoreProgress() }

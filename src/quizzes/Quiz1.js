@@ -251,9 +251,7 @@ const Quiz1 = () => {
   
   return (
     <>
-    
 
-    
       { counterRight + counterWrong === 20 ?
         <Quiz1End 
           counterWrong={counterWrong}
@@ -261,7 +259,6 @@ const Quiz1 = () => {
         />
         :
         <>
-         
           <body className="body-quiz">
             <main className="main">
               <div className="header">

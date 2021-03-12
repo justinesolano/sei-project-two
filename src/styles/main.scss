@@ -49,7 +49,6 @@ $navbar-height: 4rem;
     border: 10px solid rgba(255, 0, 0, 0);
     transition: all 1s ease;
     transform: scale(1);
-    box-shadow: 1px 1px;
   }
 }
 
@@ -119,7 +118,7 @@ $navbar-height: 4rem;
   margin-bottom: 20px;
   margin-top: 20px;
   min-width: 400px;
-  p{
+  .quote{
     margin-bottom: 20px;
     justify-content: center;
     padding: 10px;
@@ -351,7 +350,14 @@ $navbar-height: 4rem;
     .right, .wrong, .right-two, .wrong-two{
       display:flex;
       flex-direction: column;
-      justify-content: flex-end;
+      margin-left: 20px;
       align-content: flex-start;
+      
     }
+    .header-two{
+      display: flex;
+    }
+    // .quote-two {
+    //   min-width: 200px;
+    // }
   }
