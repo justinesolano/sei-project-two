@@ -18,17 +18,11 @@ const NavBar = () => {
               <Link to="/quiz-1" className="navbar-item">
             Quiz 1
               </Link>
-             
               <Link to="quiz-2" className="navbar-item">
             Quiz 2
               </Link>
-              <a className="navbar-item">
-            Quiz 3
-              </a>
+              
               <hr className="navbar-divider" />
-              <a className="navbar-item">
-            Report an issue
-              </a>
               <a className="navbar-item">
                 <Link to="/resources" className="navbar-item">
             Resources

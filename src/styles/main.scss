@@ -16,8 +16,14 @@ $navbar-height: 4rem;
     height: 100vh;
     background-image: url('https://external-preview.redd.it/ZQ-AstyRkZpGfPIas5tMDvyTmTWkycBwcZWgs5_14No.jpg?auto=webp&s=f34c2430eea18a2cf0b8d9736e6ed2670a7e864c');
   .home-title{
+
     margin-top: 80px;
-    margin-left: 60px;
+    margin-left: 80px;
+    // max-height: 100vh;
+    // min-height: 867px;
+    // min-width: 1030px;
+    width: 90%;
+    height: auto;
   }
   .pick-a-quiz{
     display: flex;
@@ -33,9 +39,16 @@ $navbar-height: 4rem;
 .quiz-list{
   display: flex;
   justify-content: center;
+
   .quiz-1-pic, .quiz-2-pic{
     margin: 20px;
-    height: 50px;
+    // height: 50px;
+
+  }
+  .quiz-1-pic:hover, .quiz-2-pic:hover{
+    border: 10px solid rgba(255, 0, 0, 0);
+    transition: all 1s ease;
+    transform: scale(1);
   }
 }
 
@@ -72,7 +85,7 @@ $navbar-height: 4rem;
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    margin-right: -400px;
+    margin-right: -300px;
     font-size: 35px;
     color: white;
     font-family: 'MedievalSharp', cursive;
@@ -104,6 +117,7 @@ $navbar-height: 4rem;
   height: 145px;
   margin-bottom: 20px;
   margin-top: 20px;
+  min-width: 400px;
   p{
     margin-bottom: 20px;
     justify-content: center;
@@ -111,6 +125,7 @@ $navbar-height: 4rem;
     padding-left: 30px;
     font-size: 25px;
     font-family: 'Times New Roman', cursive;
+    overflow: auto;
   }
 }
 .choices .top-two, .choices .bottom-two{
@@ -165,7 +180,8 @@ $navbar-height: 4rem;
   }
   }
   .counter-two{
-    margin-top: -100px;
+    margin-top: -200px;
+    margin-right: 90px;
   .right-two, .wrong-two{
     display: flex;
     justify-content: flex-end;
@@ -183,6 +199,8 @@ $navbar-height: 4rem;
     font-family: 'MedievalSharp', cursive;
     color: white;
     font-size: 40px;
+    margin-top: 90px;
+    font-weight: bold;
   }
   .quotes-two {
     display: flex;
@@ -193,6 +211,15 @@ $navbar-height: 4rem;
     margin-right: 400px;
     height: 145px;
     margin-bottom: 20px;
+      .quote-two{
+        font-family: 'Times New Roman', cursive;
+        margin-bottom: 20px;
+        justify-content: center;
+        padding: 10px;
+        padding-left: 30px;
+        font-size: 25px;
+        overflow: auto;
+      }
   }
   
   .top-buttons-two, .bottom-buttons-two{
@@ -202,6 +229,9 @@ $navbar-height: 4rem;
   }
   .button{
     margin: 10px;
+  }
+  .button .is-hovered{
+    color: white;
   }
 
 
@@ -295,5 +325,32 @@ $navbar-height: 4rem;
     font-size: 50px;
     a{
       font-family: 'Times New Roman';
+    }
+  }
+
+
+  // @media screen and (max-width: 1024px){
+  //   // a.navbar-end{
+  //   //   justify-content: flex-start;
+  //   //   margin-left: auto;
+  //   // }
+
+  //   h2 .pick-a-quiz{
+  //     font-size: 10px;
+  //   }
+    
+    
+  // }
+
+
+
+
+
+  @media screen and (max-width: 1300px) and (min-width: 1000px){
+    .right, .wrong, .right-two, .wrong-two{
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-content: flex-start;
     }
   }

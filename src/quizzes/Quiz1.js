@@ -19,7 +19,7 @@ const Quiz1 = () => {
   const token = [tokenArray[Math.floor(Math.random() * tokenArray.length)]]
   const [errors, setErrors] = useState(null)
   // console.log(errors, setErrors)
-
+  console.log(token)
   
  
   
@@ -288,7 +288,7 @@ const Quiz1 = () => {
                   <hr />
                 </div>
                 <div className="quotes box">
-                  <p> {spreadData[randomQuote].dialog}</p>
+                  <p className="quote"> {spreadData[randomQuote].dialog}</p>
                 </div>
                 <div className="choices">
                   

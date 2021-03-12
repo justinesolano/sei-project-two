@@ -121,7 +121,7 @@ const Quiz2 = () => {
               </div>
               <div>
                 <div className="quotes-two box">
-                  <h1>{rightAnswerQuote}</h1>
+                  <p className="quote-two">{rightAnswerQuote}</p>
                 </div>
                 <div className="top-buttons-two">
                   <div>
