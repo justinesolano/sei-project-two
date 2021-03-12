@@ -98,16 +98,13 @@ const Quiz2 = () => {
           <div>
             <p>Right: {counterRight}</p>
             <p>Wrong: {counterWrong}</p>
-
             <hr />
-
             <div>
               {`${filteredCharacters[0].name}:`}
             </div>
             <div>
               <h1>{rightAnswerQuote}</h1>
             </div>
-        
             <div>
               <button onClick={handleChoice} value="The Fellowship of the Ring" className={characters._id} id="choice1">
         The Fellowship of the Ring
@@ -119,12 +116,10 @@ const Quiz2 = () => {
               </button>
             </div>
             <div>
-        
               <button onClick={handleChoice} value="The Return of the King" className={characters._id} id="choice3">
         The Return of the King
               </button>
             </div>
-      
           </div>
         </>
       }
