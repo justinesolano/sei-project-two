@@ -14,15 +14,15 @@ const Home = () => {
           <h2 className="pick-a-quiz">Pick a quiz and test your LOTR knowledge</h2>
         </div>
         <section className="quiz-list">
-          <div>
+          <div className="quiz-1-pic">
             <Link to={'/quiz-1'}>
               <img className="minas-tirith" src={quizOne} />
               <a href={quizOne}></a>
             </Link> 
 
           </div>
-          <div>
-            <Link to={'/quiz-1'}>
+          <div className="quiz-2-pic">
+            <Link to={'/quiz-2'}>
               <img className="barad-dur" src={quizTwo} />
               <a href={quizTwo}></a>
             </Link>

@@ -83,6 +83,7 @@ const Quiz2 = () => {
   })   
 
   return (
+    
     <>
 
       { counterRight + counterWrong === 20 ?
@@ -92,35 +93,55 @@ const Quiz2 = () => {
         />
         :
         <>
-          <div>
-            <h1>Who said this quote?</h1>
-          </div>
-          <div>
-            <p>Right: {counterRight}</p>
-            <p>Wrong: {counterWrong}</p>
-            <hr />
-            <div>
-              {`${filteredCharacters[0].name}:`}
-            </div>
-            <div>
-              <h1>{rightAnswerQuote}</h1>
-            </div>
-            <div>
-              <button onClick={handleChoice} value="The Fellowship of the Ring" className={characters._id} id="choice1">
-        The Fellowship of the Ring
-              </button>
-            </div>
-            <div>
-              <button onClick={handleChoice} value="The Two Towers" className={characters._id} id="choice2">
-        The Two Towers
-              </button>
-            </div>
-            <div>
-              <button onClick={handleChoice} value="The Return of the King" className={characters._id} id="choice3">
-        The Return of the King
-              </button>
-            </div>
-          </div>
+          <body className="body-quiz-two">
+            <main className="main-two">
+              <div className="header-two">
+                <div className="quiz-title-two">
+                  <div>
+                    <h1 className="guess-who-two">
+                      <img className="map-bg-two has-shadow" src='https://fontmeme.com/permalink/210312/b567537bc8add4475c084dfe4899196e.png' />
+                      <br/>
+                      <img className="map-bg-three has-shadow" src='https://fontmeme.com/permalink/210312/550abc4b8cf6fe63735bfd067fc45af1.png' />
+                    </h1>
+                    <hr />
+                  </div>
+                </div>
+              </div>
+              <div className="counter-two">
+                <div className="right-two">
+                  <p>Right: {counterRight}</p>
+                </div>
+                <div className="wrong-two">
+                  <p>Wrong: {counterWrong}</p>
+                </div>
+              </div>
+              <div className="character-name">
+                {`${filteredCharacters[0].name}:`}
+              </div>
+              <div>
+                <div className="quotes-two box">
+                  <p className="quote-two">{rightAnswerQuote}</p>
+                </div>
+                <div className="top-buttons-two">
+                  <div>
+                    <button onClick={handleChoice} value="The Fellowship of the Ring" className={`${characters._id} button is-dark is-large`} id="choice1">
+              The Fellowship of the Ring { }<img src="https://img.icons8.com/color/48/000000/frodo.png"/>
+                    </button>
+                  </div>
+                  <div>
+                    <button onClick={handleChoice} value="The Two Towers" className={`${characters._id} button is-dark is-large`} id="choice2">
+              The Two Towers { } <img src="https://img.icons8.com/color/48/000000/legolas.png"/>
+                    </button>
+                  </div>
+                </div>
+                <div className="bottom-buttons-two">
+                  <button onClick={handleChoice} value="The Return of the King" className={`${characters._id} button is-dark is-large`} id="choice3">
+            The Return of the King { } <img src="https://img.icons8.com/color/48/000000/gandalf.png"/>
+                  </button>
+                </div>
+              </div>
+            </main>
+          </body>
         </>
       }
     </>

@@ -16,8 +16,14 @@ $navbar-height: 4rem;
     height: 100vh;
     background-image: url('https://external-preview.redd.it/ZQ-AstyRkZpGfPIas5tMDvyTmTWkycBwcZWgs5_14No.jpg?auto=webp&s=f34c2430eea18a2cf0b8d9736e6ed2670a7e864c');
   .home-title{
+
     margin-top: 80px;
-    margin-left: 60px;
+    margin-left: 80px;
+    // max-height: 100vh;
+    // min-height: 867px;
+    // min-width: 1030px;
+    width: 90%;
+    height: auto;
   }
   .pick-a-quiz{
     display: flex;
@@ -32,7 +38,18 @@ $navbar-height: 4rem;
 }
 .quiz-list{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+
+  .quiz-1-pic, .quiz-2-pic{
+    margin: 20px;
+    // height: 50px;
+
+  }
+  .quiz-1-pic:hover, .quiz-2-pic:hover{
+    border: 10px solid rgba(255, 0, 0, 0);
+    transition: all 1s ease;
+    transform: scale(1);
+  }
 }
 
 // NAVBAR
@@ -62,13 +79,14 @@ $navbar-height: 4rem;
   .guess-who{
     margin-top: 50px;
     font-size: 50px;
+    filter: drop-shadow(5px 5px 5px #222222);
   }
 
   .right, .wrong{
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    margin-right: -400px;
+    margin-right: -300px;
     font-size: 35px;
     color: white;
     font-family: 'MedievalSharp', cursive;
@@ -87,7 +105,8 @@ $navbar-height: 4rem;
 }
 .who-said{
   height: 30px;
-  width: 250px;
+  width: 240px;
+  filter: drop-shadow(5px 5px 5px #222222);
 }
 .quotes{
   display: flex;
@@ -99,13 +118,16 @@ $navbar-height: 4rem;
   margin-right: 300px;
   height: 145px;
   margin-bottom: 20px;
-  p{
+  margin-top: 20px;
+  min-width: 400px;
+  .quote{
     margin-bottom: 20px;
     justify-content: center;
     padding: 10px;
     padding-left: 30px;
     font-size: 25px;
     font-family: 'Times New Roman', cursive;
+    overflow: auto;
   }
 }
 .choices .top-two, .choices .bottom-two{
@@ -118,15 +140,114 @@ $navbar-height: 4rem;
 }
 
 
-  .progress{
-    // display: flex;
-    // justify-content: center;
-    margin-left: 150px;
-    margin-right: 150px;
-  }
+  // .progress{
+  //   // display: flex;
+  //   // justify-content: center;
+  //   margin-left: 150px;
+  //   margin-right: 150px;
+  // }
 
 }
 }
+
+
+// QUIZ 2
+.body-quiz-two{
+  height: 100vh;
+  background-image: url('../game-assets/mapdark.jpg');
+  background-size: fill;
+
+
+.header-two{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  
+
+  .guess-who-two{
+    font-size: 50px;
+    margin-top: 50px;
+    .map-bg-two{
+      display: flex;
+      justify-content: center;
+      filter: drop-shadow(5px 5px 5px #222222);
+    }
+    .map-bg-three{
+      display: flex;
+      justify-content: center;
+      height: 30px;
+      width: 300px;
+      margin-left: 260px;
+      margin-top: -50px;
+      filter: drop-shadow(5px 5px 5px #222222);
+    }
+  }
+  }
+  .counter-two{
+    margin-top: -200px;
+    margin-right: 90px;
+  .right-two, .wrong-two{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-right: 100px;
+    font-size: 35px;
+    color: white;
+    font-family: 'MedievalSharp', cursive;
+  }
+  }
+  }
+  .character-name{
+    display: flex;
+    justify-content: center;
+    font-family: 'MedievalSharp', cursive;
+    color: white;
+    font-size: 40px;
+    margin-top: 90px;
+    font-weight: bold;
+    filter: drop-shadow(5px 5px 5px #222222);
+  }
+  .quotes-two {
+    display: flex;
+    justify-content: center;
+    border: 10px;
+    border-radius: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+    height: 145px;
+    margin-bottom: 20px;
+      .quote-two{
+        font-family: 'Times New Roman', cursive;
+        margin-bottom: 20px;
+        justify-content: center;
+        padding: 10px;
+        padding-left: 30px;
+        font-size: 25px;
+        overflow: auto;
+      }
+  }
+  
+  .top-buttons-two, .bottom-buttons-two{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .button{
+    margin: 10px;
+  }
+
+
+
+  // .progress{
+  //   // display: flex;
+  //   // justify-content: center;
+  //   margin-left: 150px;
+  //   margin-right: 150px;
+  // }
+
+
+
 
 // QUIZ END
 
@@ -209,4 +330,38 @@ $navbar-height: 4rem;
     a{
       font-family: 'Times New Roman';
     }
+  }
+
+
+  // @media screen and (max-width: 1024px){
+  //   // a.navbar-end{
+  //   //   justify-content: flex-start;
+  //   //   margin-left: auto;
+  //   // }
+
+  //   h2 .pick-a-quiz{
+  //     font-size: 10px;
+  //   }
+    
+    
+  // }
+
+
+
+
+
+  @media screen and (max-width: 1300px) and (min-width: 1000px){
+    .right, .wrong, .right-two, .wrong-two{
+      display:flex;
+      flex-direction: column;
+      margin-left: 20px;
+      align-content: flex-start;
+      
+    }
+    .header-two, .header{
+      display: flex;
+    }
+    // .quote-two {
+    //   min-width: 200px;
+    // }
   }
