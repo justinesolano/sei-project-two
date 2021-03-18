@@ -11,7 +11,7 @@ const Quiz2 = () => {
   let spreadData = []
   const [counterWrong, setCounterWrong] = useState(0)
   const [counterRight, setCounterRight] = useState(0)  
-  const token = '9cbWfQjSMiEwOyMVpK9c'
+  const token = process.env.REACT_APP_API_TOKEN
   useEffect(()=>{
     const getData = async () =>{
       const response = await axios.get('https://the-one-api.dev/v2/character', 

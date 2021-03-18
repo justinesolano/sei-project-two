@@ -12,7 +12,7 @@ const Quiz1 = () => {
 
   const [counterWrong, setCounterWrong] = useState(0)
   const [counterRight, setCounterRight] = useState(0)
-  const token = '9cbWfQjSMiEwOyMVpK9c' //'UiMcVRqTZfm9cd5rumQy'
+  const token = process.env.REACT_APP_API_TOKEN
   
 
   // const history = useHistory()
