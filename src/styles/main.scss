@@ -13,8 +13,9 @@ $navbar-height: 4rem;
 
 // HOME
 .home-body{
-    height: 100vh;
+    height: 110vh;
     background-image: url('https://external-preview.redd.it/ZQ-AstyRkZpGfPIas5tMDvyTmTWkycBwcZWgs5_14No.jpg?auto=webp&s=f34c2430eea18a2cf0b8d9736e6ed2670a7e864c');
+    margin-top: -80px;
   .home-title{
 
     margin-top: 80px;
@@ -54,12 +55,43 @@ $navbar-height: 4rem;
 
 // NAVBAR
 .navbar{
-  height: 40px;
+  height: 35px;
+  font-family: 'MedievalSharp', cursive;
   background-image: '../game-assets/map.jpg';
-}
+  font-size: 30px;
+  background-color: transparent;
+
 .navbar-brand{
   margin-top: 20px;
   font-size: 20px;
+  .home-nav{
+  font-size: 30px;
+  margin-top: -17px;
+  color: black;
+  text-shadow: 2px 2px 5px rgb(255, 255, 255);
+  }
+}
+.navbar.link{
+  display: flex;
+  align-content: center;
+  .arrow{
+    height: 25px;
+    margin-top: 6px;
+    margin: 10px;
+  }
+  
+.navbar-menu{
+  color:rgb(0, 0, 0);
+  text-shadow: 2px 2px 5px rgb(255, 255, 255);
+  }
+}
+.ring{
+  width: 35px;
+  margin-bottom: -5px;
+}
+.navbar-dropdown{
+  font-size: 20px;
+}
 }
 
 // QUIZ 1

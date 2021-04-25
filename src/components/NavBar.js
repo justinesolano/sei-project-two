@@ -1,18 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ring from '../game-assets/ring.png'
+import arrow from '../game-assets/arrow.png'
 
 const NavBar = () => {
   return (
-    <nav className="navbar is-dark">
+    <nav className="navbar">
       <div className="container">
 
         <div className="navbar-brand">
-          <Link to="/"> Home</Link>
+          <Link to="/" className="home-nav"> <img src={ring} className="ring"/> Home</Link>
         </div>
         <div className="navbar-end">
           <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link">
-          Menu
+            <a className="navbar link">
+              <p className="navbar-menu">Menu <img src={arrow} className="arrow"/> </p>
             </a>
             <div className="navbar-dropdown">
               <Link to="/quiz-1" className="navbar-item">
