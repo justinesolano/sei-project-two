@@ -66,7 +66,7 @@ $navbar-height: 4rem;
   font-size: 20px;
   .home-nav{
   font-size: 30px;
-  margin-top: -17px;
+  margin-top: -15px;
   color: black;
   text-shadow: 2px 2px 5px rgb(255, 255, 255);
   }
@@ -77,12 +77,13 @@ $navbar-height: 4rem;
   .arrow{
     height: 25px;
     margin-top: 6px;
-    margin: 10px;
+    margin: 7px;
   }
   
 .navbar-menu{
   color:rgb(0, 0, 0);
   text-shadow: 2px 2px 5px rgb(255, 255, 255);
+  margin-top: 3px;
   }
 }
 .ring{
