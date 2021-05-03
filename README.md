@@ -1,5 +1,5 @@
 # General Assembly Project 2: Lord of the Rings Quiz
-![LOTR Logo](src/game-assets/lotrquiz.png)
+![LOTR Logo](src/game-assets/logo.png)
 ----
 # Group Members:
 * Justine Solano: https://github.com/justinesolano
