@@ -145,7 +145,7 @@ We also encountered a problem where the right answer would appear in the same bu
 
   const buttonsOrder = buttonNumberGenerator()
 ```
-We then wrote a function declaring the different orders of the four buttons with the right answer placed in a different button each time. There were four different orders laid out in a variable
+We then wrote a function declaring the different orders of the four buttons with the right answer placed in a different button each time. There were four different orders laid out like so:
 ```javascript
  const randomButtonsOrder = () => {
     if (buttonsOrder === 0){
@@ -231,19 +231,19 @@ The quiz links on the homepage are animated to slide slightly downwards on hover
 
 ## Final project walkthrough
 Homepage:
-![LotR Home Page](src/game-assets/home.png)
+![LotR Home Page](src/game-assets/home.jpg)
  
 Quiz1:
-![LotR Quiz1](src/game-assets/quiz1.png)
+![LotR Quiz1](src/game-assets/quiz1.jpg)
  
 Quiz2:
-![LotR Quiz2](src/game-assets/quiz2.png)
+![LotR Quiz2](src/game-assets/quiz2.jpg)
  
 Quiz1End/Quiz2End
-![LotR QuizEnd](src/game-assets/quizend.png)
+![LotR QuizEnd](src/game-assets/quizend.jpg)
  
 Resources:
-![LotR Resources](src/game-assets/resources.png)
+![LotR Resources](src/game-assets/resources.jpg)
 
 
 ## Wins, hurdles and unsolved problems
