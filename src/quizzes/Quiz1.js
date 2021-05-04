@@ -6,18 +6,17 @@ const Quiz1 = () => {
   const [quotes, setQuotes] = useState(null)
   const [characters, setCharacters] = useState(null)
   const [movie, setMovie] = useState(null)
-  // console.log(movie)
+
   let spreadData = []
   const [counterWrong, setCounterWrong] = useState(0)
   const [counterRight, setCounterRight] = useState(0)
   // const tokenArray = ['9cbWfQjSMiEwOyMVpK9c', 'F-xdpariq8FTrnifdJOA', '6MlYn5XJh5l2icjeXahh', 'UiMcVRqTZfm9cd5rumQy'] 
   // const token = [tokenArray[Math.floor(Math.random() * tokenArray.length)]]
   const [errors, setErrors] = useState(null)
-  // console.log(errors, setErrors)
-  // console.log(token)
+
   const token = '6MlYn5XJh5l2icjeXahh'
   // process.env.REACT_APP_API_TOKEN
-  // const history = useHistory()
+  
   useEffect(()=>{
     const getData = async () =>{
       try {
@@ -37,6 +36,8 @@ const Quiz1 = () => {
     }
     getData()
   }, [])
+
+
   useEffect(()=>{
     const getData = async () =>{
       try {
@@ -54,6 +55,7 @@ const Quiz1 = () => {
     }
     getData()
   }, [])
+
   useEffect(()=>{
     const getData = async () =>{
       try {
@@ -70,8 +72,12 @@ const Quiz1 = () => {
     }
     getData()
   }, [])
+
+
+
   if (!quotes || !characters || !movie) return <p>{errors}</p> 
   spreadData = [...quotes, ...movie]
+
   // console.log('spread data',spreadData)
   const randomQuote = Math.floor(Math.random() * spreadData.length)
   const randomCharacter1 = Math.floor(Math.random() * characters.length)
@@ -79,13 +85,16 @@ const Quiz1 = () => {
   const randomCharacter3 = Math.floor(Math.random() * characters.length)
   const rightAnswerRandom = spreadData[randomQuote].character
   // console.log('right answer random', rightAnswerRandom)
+
   const filteredCharacters = characters.filter(character => {
     return character._id === rightAnswerRandom
   })
+
   // console.log(filteredCharacters[0].name) 
   function buttonNumberGenerator() {
     return Math.floor(Math.random() * 4)
   }
+
   const buttonsOrder = buttonNumberGenerator()
   const randomButtonsOrder = () => {
     if (buttonsOrder === 0){

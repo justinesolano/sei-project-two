@@ -1,5 +1,5 @@
 # General Assembly Project 2: Lord of the Rings Quiz
-![LOTR Logo](src/game-assets/logo.png)
+![LotR Logo](src/game-assets/logo.png)
 ----
 # Group Members:
 * Justine Solano: https://github.com/justinesolano
@@ -24,10 +24,10 @@
 * **Be deployed online** and accessible to the public (hosted on your public github, not GA github!)
 ​
 ## Timeframe:
-2.5 Days
+2 Days
  
 ## Description:
-The Lord of the Rings Quiz App allows you to play two quizzes - the first a 'Guess Which Character Said' quotes quiz, and the second a 'Guess Which Movie This Quote Is From' quiz that only covers the LotR movie trilogy. There are 20 questions for each quiz and you score a point when you get a question right. The player gets a different LotR gif depending on their quiz score.
+The Lord of the Rings Quiz App allows you to play two quizzes - the first a 'Guess Which Character Said' quotes quiz, and the second a 'Guess Which Movie This Quote Is From' quiz that only covers the LotR movie trilogy. There are 20 questions for each quiz with four answers and you score a point when you get a question right. The player gets a different LotR gif depending on their quiz score.
  
 ### Deployed version:
 https://lotrquiz-app.netlify.app
@@ -50,6 +50,8 @@ https://the-one-api.dev/
 - Git & GitHub
 - Google Chrome development tools
 - Adobe Photoshop 2021 (wireframes)
+- Fontmeme.com (logo and titles)
+- Icons8.com (LotR character icons)
 - Netlify (deployment)
 
 ## Installation
@@ -60,7 +62,7 @@ Clone or download sei-project-two repo then run these in Terminal:
  # PROCESS
 ## PLANNING (day 1)
 ### Concept
-Jonty and I wanted to do something fun so we decided to create a quiz app. We both decided on a Lord of the Rings themed quiz because we both love the trilogy. It was only a 2-day hackathon so we kept our scope tight and doable. We decided to do 3 quizzes as the API we used provided a handful of routes that were useful for different quizzes such as /character, /book, /quotes, /movies.
+Jonty and I wanted to do something fun so we decided to create a quiz app. We both decided on a Lord of the Rings themed quiz because we both love the trilogy. It was only a 2-day hackathon so we kept our scope tight and doable. We decided to do 3 quizzes as the API we used provided a handful of routes that were useful for different quizzes such as /character, /book, /quotes, /movies. The 
 
 ### Wireframes
 ![LotR Wireframe](src/game-assets/wireframe.jpg)
@@ -68,3 +70,192 @@ Jonty and I wanted to do something fun so we decided to create a quiz app. We bo
 ![LotR Wireframe](src/game-assets/wireframe2.jpg)
 
 ![LotR Wireframe](src/game-assets/wireframe3.jpg)
+
+We decided to do a quiz for guessing the character from a quote and a guess what movie this quote is from quiz. We also wanted to do a main character quiz where the question would select a random LotR trilogy main character and the player would have to choose a quote that the character said during the three films.
+
+## FRONTEND (day 1 & 2)
+After being signed off, we started on the first quiz. We used two endpoints here: /character, and /quote.
+
+```javascript
+  useEffect(()=>{
+    const getData = async () =>{
+      try {
+        const response = await axios.get('https://the-one-api.dev/v2/character', 
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+        setCharacters(response.data.docs)
+      } catch (err) {
+        // return <h1>This link is broken</h1>
+        setErrors('This page is broken, try again later!')
+        // console.log(errors)
+      }
+      // console.log(response)
+    }
+    getData()
+  }, [])
+```
+
+There was a problem with the API that we realised soon after. The quote endpoint only included quotes from The Two Towers and Return of the King films and not from Fellowship. We then had to add a GET request from the specific film's endpoint quotes:
+```javascript
+  useEffect(()=>{
+    const getData = async () =>{
+      try {
+        const response = await axios.get('https://the-one-api.dev/v2/movie/5cd95395de30eff6ebccde5c/quote', 
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+        setMovie(response.data.docs) 
+      } catch (err){
+        setErrors('This page is broken, try again later!')
+      }    
+    }
+    getData()
+  }, [])
+```
+
+We then merged the data returned by spreading `spreadData = [...quotes, ...movie]` into a let variable as an array `let spreadData = []` then using the variable to generate a random quote using the `Math.random()` method:
+```javascript
+  const randomQuote = Math.floor(Math.random() * spreadData.length)
+  const randomCharacter1 = Math.floor(Math.random() * characters.length)
+  const randomCharacter2 = Math.floor(Math.random() * characters.length)
+  const randomCharacter3 = Math.floor(Math.random() * characters.length)
+  const rightAnswerRandom = spreadData[randomQuote].character
+```
+
+Another problem was that whilst the character endpoint included all characters from the movie AND books, the quotes endpoint were quotes only from the movie trilogy. This meant that the right answer for each quote was most likely very obvious because the quotes would usually be from a main character and the randomized wrong answers were usually book characters that have no part in the films.
+
+We also decided to have a visible score counter that dynamically changed with every question answered so the player can keep track of their score.
+``` javascript
+  const handleChoice = (event)=>{
+    event.target.id === 'choice1' ? setCounterRight(counterRight + 1) : setCounterWrong(counterWrong + 1)
+    randomButtonsOrder()
+  }
+```
+
+We also encountered a problem where the right answer would appear in the same button everytime. We came up with a solution pretty quickly which was to generate a `randomButtonsOrder` function to randomize the orders of the button so the right answer would appear in a different position. We used the `Math.random()` method to do this too.
+```javascript
+  function buttonNumberGenerator() {
+    return Math.floor(Math.random() * 4)
+  }
+
+  const buttonsOrder = buttonNumberGenerator()
+```
+We then wrote a function declaring the different orders of the four buttons with the right answer placed in a different button each time. There were four different orders laid out in a variable
+```javascript
+ const randomButtonsOrder = () => {
+    if (buttonsOrder === 0){
+      return (
+        <div className="answers">
+          <div className="top-two">
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice1">
+                {filteredCharacters[0].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice2">
+                {characters[randomCharacter1].name}
+              </button>
+            </div>
+          </div>
+          <div className="bottom-two">
+            <div>
+              <button onClick={handleChoice} className={`${characters._id} button is-dark is-large`} id="choice3">
+                {characters[randomCharacter2].name}
+              </button>
+            </div>
+            <div>
+              <button onClick={handleChoice}  className={`${characters._id} button is-dark is-large`} id="choice4">
+                {characters[randomCharacter3].name}
+              </button>
+            </div>
+          </div>
+        </div>
+      )
+    }
+```
+  which was then called in the JSX within the choices div.
+```javascript
+<div className="choices">
+  {randomButtonsOrder()}
+</div>
+```
+
+We did the same for Quiz 2 but the choice buttons did not need to be randomized because there were only 3 answers that were available for every question:
+```javascript
+  const movieName = () =>{
+    if (rightAnswerRandom === '5cd95395de30eff6ebccde5b'){
+      return 'The Two Towers'
+    } else if (rightAnswerRandom === '5cd95395de30eff6ebccde5c'){
+      return 'The Fellowship of the Ring'
+    } else if (rightAnswerRandom === '5cd95395de30eff6ebccde5d'){
+      return 'The Return of the King'
+    } 
+  }
+  movieName()
+```
+
+We did not have time for a third quiz because we needed to begin on the styling during the second day.
+
+The Quiz1End/Quiz2End components are the results page. It shows the player's final quiz score and uses conditional rendering to show a gif based on this score. There are four different gifs for each score range: 0-5, 6-10, 11-15 & 16-20. As an extra page, we added a link in the Menu to the API we used.
+
+### Styling
+After setting up the first quiz together, we decided to begin the styling as soon as possible because we were tight for time. We decided that Jonty would continue setting up Quiz2 and I would begin the styling. We decided to use Bulma for this project. 
+
+Jonty found a number of high resolution Lord of the Rings themed backgrounds which we used for all components. I had to modify them slightly and made them darker in Photoshop so the titles would stand out more and be more readable. I made sure to consult Jonty on every styling decision I made such as the font, the quiz pictures, and even the icons in the Quiz2 buttons. I wanted to makre sure that this project was a team effort because it was both our first hackathon experience.
+
+We had a lot of trouble with flexbox on the quiz pages, specifically with the Right/Wrong counter beside the quiz questions. When Jonty opened the page on his PC which was a smaller size than mine, the placement of several divs and the quotes box were severely out of place. We had to find a way to make the page render the elements in sensible positions regardless of screen size so that they wouldn't be hiding behind other elements or be melded at the top of the page with the navbar. I had to use a lot of time figuring out margins and flexboxing the counter. I styled it so that when the screen reached a certain width, the counters would change positions from the right to the left of the screen.
+```javascript
+  @media screen and (max-width: 1300px) and (min-width: 1000px){
+    .right, .wrong, .right-two, .wrong-two{
+      display:flex;
+      flex-direction: column;
+      margin-left: 20px;
+      align-content: flex-start;
+      
+    }
+    .header-two, .header{
+      display: flex;
+    }
+  }
+```
+
+In the end, the counters stayed in the right place that we wanted them to but the app itself has very limited responsivity.
+
+The quiz links on the homepage are animated to slide slightly downwards on hover. The font used for the homepage title and the quiz title is the same one from the movie trilogy so that the quiz looked undoubtedly LotR. As a whole, we were both very pleased with the styling of the project.
+
+## Final project walkthrough
+Homepage:
+![LotR Home Page](src/game-assets/home.png)
+ 
+Quiz1:
+![LotR Quiz1](src/game-assets/quiz1.png)
+ 
+Quiz2:
+![LotR Quiz2](src/game-assets/quiz2.png)
+ 
+Quiz1End/Quiz2End
+![LotR QuizEnd](src/game-assets/quizend.png)
+ 
+Resources:
+![LotR Resources](src/game-assets/resources.png)
+
+
+## Wins, hurdles and unsolved problems
+### Wins:
+
+Jonty and I were on the same page throughout the whole hackathon about different parts of the project. We had a great dynamic and great communication throughout. I felt more confident doing this project knowing that we both knew what we were doing and if I was confused about anything, I could easily ask or voice my concerns about what certain functions were doing.
+
+### Hurdles:
+
+
+
+### Unsolved problems:
+
+
+## Extra features/improvements

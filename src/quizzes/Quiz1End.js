@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const QuizEnd = (counterWrong) => {
+const Quiz1End = (counterWrong) => {
 
  
 
@@ -78,4 +78,4 @@ const QuizEnd = (counterWrong) => {
   )
 }
 
-export default QuizEnd
+export default Quiz1End
