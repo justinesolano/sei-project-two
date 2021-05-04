@@ -28,11 +28,8 @@ const Quiz1 = () => {
           })
         setCharacters(response.data.docs)
       } catch (err) {
-        // return <h1>This link is broken</h1>
         setErrors('This page is broken, try again later!')
-        // console.log(errors)
       }
-      // console.log(response)
     }
     getData()
   }, [])
