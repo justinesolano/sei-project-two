@@ -27,13 +27,13 @@
 2.5 Days
  
 ## Description:
-The Lord of the Rings Quiz App allows you to play two quizzes - the first a 'Guess Which Character Said' quotes quiz, and the second a 'Guess Which Movie This Quote Is From' quiz that only covers the LotR movie trilogy. There are 20 questions for each quiz and you score points whether you get a question right. The player gets a different LotR gif depending on their quiz score.
+The Lord of the Rings Quiz App allows you to play two quizzes - the first a 'Guess Which Character Said' quotes quiz, and the second a 'Guess Which Movie This Quote Is From' quiz that only covers the LotR movie trilogy. There are 20 questions for each quiz and you score a point when you get a question right. The player gets a different LotR gif depending on their quiz score.
  
 ### Deployed version:
 https://lotrquiz-app.netlify.app
 
 ## Technologies used
-### API used:
+### API:
 https://the-one-api.dev/
 
 ### Frontend:
@@ -60,3 +60,11 @@ Clone or download sei-project-two repo then run these in Terminal:
  # PROCESS
 ## PLANNING (day 1)
 ### Concept
+Jonty and I wanted to do something fun so we decided to create a quiz app. We both decided on a Lord of the Rings themed quiz because we both love the trilogy. It was only a 2-day hackathon so we kept our scope tight and doable. We decided to do 3 quizzes as the API we used provided a handful of routes that were useful for different quizzes such as /character, /book, /quotes, /movies.
+
+### Wireframes
+![LotR Wireframe](src/game-assets/wireframe.jpg)
+
+![LotR Wireframe](src/game-assets/wireframe2.jpg)
+
+![LotR Wireframe](src/game-assets/wireframe3.jpg)
