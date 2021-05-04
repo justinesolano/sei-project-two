@@ -222,7 +222,7 @@ We did not have time for a third quiz because we needed to begin styling during 
 
 The Quiz1End/Quiz2End components are the results page. It shows the player's final quiz score and uses conditional rendering to show a gif based on this score. There are four different gifs for each score range: 0-5, 6-10, 11-15 & 16-20. As an extra page, we added a link in the Menu to the API we used.
 
-### Styling
+### Styling (night 1 & day 2)
 After setting up the first quiz together, we decided to begin the styling as soon as possible because we were tight for time. We decided that Jonty would continue setting up Quiz2 and I would begin the styling. We decided to use Bulma for this project. 
 
 Jonty found a number of high resolution Lord of the Rings backgrounds which we used for all components. I had to modify them slightly and made them darker in Photoshop so the titles would stand out more and be more readable. I made sure to consult Jonty on every styling decision I made such as the font, the quiz pictures, and even the icons in the Quiz2 buttons. I wanted to make sure that this project was a team effort because it was both our first hackathon experience.
@@ -265,9 +265,9 @@ Resources:
 
 ## Wins, hurdles and unsolved problems
 ### Wins:
-Jonty and I were on the same page throughout the whole hackathon. We had a great dynamic and great communication throughout. I felt more confident doing this project knowing that we both knew what we wanted to do and if I was confused about anything, I could easily ask or voice my concerns about what certain functions were doing or how we could achieve certain things.
+Jonty and I were on the same page throughout the whole hackathon. We had a great dynamic and great communication throughout. I felt more confident doing this project knowing that we both knew what we wanted to do and if I was confused about anything, I could easily ask or voice my concerns about what certain functions were doing or how we could achieve certain things. Whenever we encountered a hurdle, we got over it quicker than I expected we would and using React for this project was actually more straightforward than I expected also.
 
-It was a great experience for my first project using React. Overall, my first experience pair coding was very successful and made me more confident working with other people on projects. Besides one or two flexbox issues, the styling process was also smooth and the look of the app came out better than I had expected.
+It was a great experience for my first project using React. Overall, my first time pair coding was very successful and made me more confident working with other people on projects. Besides one or two flexbox issues, the styling process was also smooth and the look of the app came out better than I had expected.
 
 ### Hurdles:
 The main problem from the API was that we had to wait several times in 10-minute instances for the request load to reset because the API only gives authenticated users access to 100 requests every 10 minutes. Because there were two of us, we did not want to overload the request limit by having twice as many requests than was necessary. We decided that only Jonty would run the localhost on his browser and then use screenshare so we both could see the changes to the app.
