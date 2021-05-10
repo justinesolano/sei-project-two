@@ -14,7 +14,7 @@ const Quiz1 = () => {
   // const token = [tokenArray[Math.floor(Math.random() * tokenArray.length)]]
   const [errors, setErrors] = useState(null)
 
-  const token = '6MlYn5XJh5l2icjeXahh'
+  const token = 'mFOHcaoJ4f2i7-g91j0f'
   // process.env.REACT_APP_API_TOKEN
   
   useEffect(()=>{

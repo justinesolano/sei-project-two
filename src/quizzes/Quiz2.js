@@ -8,10 +8,15 @@ const Quiz2 = () => {
   const [quotes, setQuotes] = useState(null)
   const [characters, setCharacters] = useState(null)
   const [movie, setMovie] = useState(null)
+
   let spreadData = []
+
   const [counterWrong, setCounterWrong] = useState(0)
   const [counterRight, setCounterRight] = useState(0)  
-  const token = '6MlYn5XJh5l2icjeXahh'
+
+  const token = '340f36Z5JvfqXOrmYlYf'
+  // '6MlYn5XJh5l2icjeXahh'
+
   useEffect(()=>{
     const getData = async () =>{
       const response = await axios.get('https://the-one-api.dev/v2/character', 
