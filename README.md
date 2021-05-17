@@ -2,7 +2,7 @@
 ![LotR Logo](src/game-assets/logo.png)
 ----
 # Group Members:
-* Justine Solano: https://github.com/justinesolano
+* Justine Solano (me): https://github.com/justinesolano
 * Jonty Ward: https://github.com/jonty-ward
 
 # Table of Contents
@@ -62,7 +62,7 @@ Clone or download sei-project-two repo then run these in Terminal:
  # PROCESS
 ## PLANNING (day 1)
 ### Concept
-Jonty and I wanted to do something fun so we decided to create a quiz app. We both decided on a Lord of the Rings themed quiz because we both love the trilogy. It was only a 2-day hackathon so we kept our scope tight and doable. We decided to do 3 quizzes as the API we used provided a handful of routes that were useful for different quizzes such as /character, /book, /quotes, /movies.
+Jonty and I wanted to do something fun so we decided to create a quiz app. We both decided on a Lord of the Rings themed quiz because we both love the trilogy. It was only a 2-day hackathon so we kept our scope tight and doable. We decided to do 3 quizzes as the API we used provided a handful of endpoints that were useful for different quizzes such as `/character`, `/book`, `/quotes`, and `/movies`.
 
 ### Wireframes
 ![LotR Wireframe](src/game-assets/wireframe.jpg)
@@ -74,7 +74,7 @@ Jonty and I wanted to do something fun so we decided to create a quiz app. We bo
 We decided to do a quiz for ‘guess the character who said this quote’ and a ‘guess what movie this quote is from’ quiz. We also wanted to do a main character quiz where the question would select a random trilogy main character and the player would have to choose a quote that the character said during the three films.
 
 ## FRONTEND (day 1 & 2)
-After being signed off, we started on the first quiz. We used two endpoints here: /character, and /quote.
+After being signed off, we started on the first quiz. We used two endpoints here: `/character`, and `/quote`.
 
 ```javascript
 
